@@ -24,7 +24,7 @@ gulp.task('html', () => {
 
 gulp.task('css', () => {
   gulp.src('./src/css/*.css')
-    .pipe(cleanCSS({compatibility: 'ie8'}))
+    .pipe(cssUglify())
     .pipe(gulp.dest('./dist/css'));
 });
 
@@ -34,4 +34,4 @@ gulp.task('js', () => {
     .pipe(gulp.dest('./dist/js'));
 });
 
-gulp.task('default',['html','css', 'js']);
+gulp.task('default',['css']);
